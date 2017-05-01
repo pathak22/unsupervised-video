@@ -30,7 +30,7 @@ This is the code for our [CVPR 2017 paper on Unsupervised Learning using unlabel
   bash ./models/download_caffe_models.sh
   # This will populate the `./models/` folder with trained models.
   ```
-  The models were initially trained in Torch and then converted to caffe. Hence, if you are using caffe fast-rcnn then include `image_transform_layer.py` in your caffe. It converts the scale and mean of the input image as needed.
+  The models were initially trained in Torch and then converted to caffe. Hence, please include pycaffe based `image_transform_layer.py` in your folder. It converts the scale and mean of the input image as needed.
 
 3. Fetch torch models
   ```Shell

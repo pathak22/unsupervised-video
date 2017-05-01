@@ -5,7 +5,7 @@ cd $DIR
 
 FILE=caffemodels.tar.gz
 URL=https://s3-us-west-1.amazonaws.com/unsupervised-video/$FILE
-CHECKSUM=c4a5c022994e841e7e6225d842522f48
+CHECKSUM=29e4a50f4fc77b0563a201f28577a895
 
 if [ ! -f $FILE ]; then
   echo "Downloading the unsupervised video caffemodels (829MB)..."

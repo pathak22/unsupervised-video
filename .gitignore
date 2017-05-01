@@ -1,1 +1,3 @@
 models/*.tar.gz
+models/caffemodels/
+models/torchmodels/

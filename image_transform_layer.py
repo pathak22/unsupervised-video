@@ -1,8 +1,3 @@
-# --------------------------------------------------------
-# Fast/er R-CNN by Ross Girschick
-# Licensed under The MIT License [see LICENSE for details]
-# --------------------------------------------------------
-
 """
 Transform images for compatibility with models trained with
 https://github.com/facebook/fb.resnet.torch.
@@ -21,7 +16,6 @@ layer {
 """
 
 import caffe
-from fast_rcnn.config import cfg
 import numpy as np
 
 
@@ -36,17 +30,10 @@ class TorchImageTransformLayer(caffe.Layer):
             np.array([[[[0.229]],
                        [[0.224]],
                        [[0.225]]]])
-        # The default ("old") pixel means that were already subtracted
-        channel_swap = (0, 3, 1, 2)
-        self.OLD_PIXEL_MEANS = \
-            cfg.PIXEL_MEANS[np.newaxis, :, :, :].transpose(channel_swap)
-
         top[0].reshape(*(bottom[0].shape))
 
     def forward(self, bottom, top):
         ims = bottom[0].data
-        # Invert the channel means that were already subtracted
-        ims += self.OLD_PIXEL_MEANS
         # 1. Permute BGR to RGB and normalize to [0, 1]
         ims = ims[:, [2, 1, 0], :, :] / 255.0
         # 2. Remove channel means
