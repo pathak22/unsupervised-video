@@ -9,7 +9,7 @@ Facebook AI Research (FAIR)<br/>
 
 This is the code for our [CVPR 2017 paper on Unsupervised Learning using unlabeled videos](http://cs.berkeley.edu/~pathak/unsupervised_video/). This repository contains models trained by the unsupervised motion grouping algorithm both in Caffe and Torch. If you find this work useful in your research, please cite:
 
-    @inproceedings{pathakCVPR16context,
+    @inproceedings{pathakCVPR17learning,
         Author = {Pathak, Deepak and Girshick, Ross and Doll\'{a}r,
                   Piotr and Darrell, Trevor and Hariharan, Bharath},
         Title = {Learning Features by Watching Objects Move},
