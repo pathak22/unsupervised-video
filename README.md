@@ -17,7 +17,8 @@ This is the code for our [CVPR 2017 paper on Unsupervised Learning using unlabel
         Year = {2017}
     }
 
-### 1) Fetching Models
+### 1) Fetching Models for Unsupervised Transfer
+The models below only contains the layer that are used for unsupervised transfer learning. For the full model that contains motion segmentation, see next section.
 
 1. Clone the repository
   ```Shell
@@ -39,7 +40,18 @@ This is the code for our [CVPR 2017 paper on Unsupervised Learning using unlabel
   # This will populate the `./models/` folder with trained models.
   ```
 
-### 2) Additional Software Packages
+### 2) Fetching Motion Segmentation models
+Follow the instructions below to download full motion segmentation model trained on the automatically selected 205K videos from YFCC100m. I trained it in Torch, but you can train your own model from the full data [available here](https://people.eecs.berkeley.edu/~pathak/unsupervised_video/index.html#data) in any deep learning package using the training details from paper.
+```Shell
+cd unsupervised-video/
+bash ./models/download_torch_motion_model.sh
+# This will populate the `./models/` folder with trained model.
+
+cd motionseg/
+th load_motionmodel.lua -input ../models/motionSegmenter_fullModel.t7
+```
+
+### 3) Additional Software Packages
 
 We are releasing software packages which were developed in the project, but could be generally useful for computer vision research. If you find them useful, please consider citing our work. These include:
 
