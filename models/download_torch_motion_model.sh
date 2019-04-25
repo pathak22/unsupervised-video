@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/" && pwd )"
 cd $DIR
 
 FILE=torchmodels_motion.tar.gz
-URL=https://s3-us-west-1.amazonaws.com/unsupervised-video/$FILE
+URL=https://dl.fbaipublicfiles.com/unsupervised-video/$FILE
 CHECKSUM=497efcdf10630cf6fd83d9b367765934
 
 if [ ! -f $FILE ]; then
